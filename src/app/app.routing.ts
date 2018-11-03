@@ -10,11 +10,36 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
 export const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: 'dashboard',
+  //   pathMatch: 'full',
+  // },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login Page'
+    },
+    // canActivate: [AuthGuard] 
   },
+  { 
+    path: 'register', 
+    component: RegisterComponent, 
+    data: {
+      title: 'Register Page'
+    }
+    // canActivate: [AuthGuard] 
+  },
+  // { 
+  //   path: 'user', 
+  //   component: UserComponent, 
+  //   data: {
+  //     title: 'User Page'
+  //   }
+  //   resolve: { data: UserResolver}
+  // },
   {
     path: '404',
     component: P404Component,
@@ -30,20 +55,6 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
-  {
     path: '',
     component: DefaultLayoutComponent,
     data: {
@@ -51,37 +62,41 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'base',
-        loadChildren: './views/base/base.module#BaseModule'
-      },
-      {
-        path: 'buttons',
-        loadChildren: './views/buttons/buttons.module#ButtonsModule'
-      },
-      {
-        path: 'charts',
-        loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
-      },
-      {
         path: 'dashboard',
-        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+        loadChildren: './views/dashboard/Dashboard.module#DashboardModule'
       },
       {
-        path: 'icons',
-        loadChildren: './views/icons/icons.module#IconsModule'
+        path: 'bus',
+        loadChildren: './views/bus/bus.module#BusModule'
       },
       {
-        path: 'notifications',
-        loadChildren: './views/notifications/notifications.module#NotificationsModule'
+        path: 'officer',
+        loadChildren: './views/officer/officer.module#OfficerModule'
       },
       {
-        path: 'theme',
-        loadChildren: './views/theme/theme.module#ThemeModule'
+        path: 'customer',
+        loadChildren: './views/customer/customer.module#CustomerModule'
       },
       {
-        path: 'widgets',
-        loadChildren: './views/widgets/widgets.module#WidgetsModule'
-      }
+        path: 'travel',
+        loadChildren: './views/travel/travel.module#TravelModule'
+      },
+      {
+        path: 'promotion',
+        loadChildren: './views/promotion/promotion.module#PromotionModule'
+      },
+      {
+        path: 'transaction',
+        loadChildren: './views/transaction/transaction.module#TransactionModule'
+      },
+      {
+        path: 'manage-account',
+        loadChildren: './views/manageaccount/manage-account.module#ManageAccountModule'
+      },
+      {
+        path: 'report',
+        loadChildren: './views/report/report.module#ReportModule'
+      },
     ]
   }
 ];
