@@ -15,15 +15,23 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> {
-      return this.auth.user.pipe(
-        take(1),
-        map(user => !!user),
-        tap(loggedIn => {
-          if (!loggedIn) {
-            console.log('access denied')
-            this.router.navigate(['/login']);
-          }
-        })
-      )
-    }
+    return this.auth.user.pipe(
+      take(1),
+      map(user => !!user),
+      tap(loggedIn => {
+        if (!loggedIn) {
+          console.log('access denied')
+          this.router.navigate(['/login']);
+        }
+      })
+    )
+  }
+
+  // canActivate() {
+  //   if (this.auth.isLoggedIn()) {
+  //     return true;
+  //   }
+  //   this.router.navigate(['/']);
+  //   return false;
+  // }
 }
