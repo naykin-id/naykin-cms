@@ -4,14 +4,14 @@
   "description": "Naykin content management system",
   "author": {
     "name": "Naykin development team",
-    "github": "https://github.com/naykin-id",
+    "github": "https://github.com/naykin-id"
   },
   "homepage": "https://naykin.id",
   "copyright": "Copyright 2018 naykin dev team",
   "license": "POLMAN",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --progress --host localhost --port 4200 --open",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
