@@ -10,11 +10,20 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
 export const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: 'dashboard',
+  //   pathMatch: 'full',
+  // },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
+    data: {
+      title: 'Login Page'
+    }
   },
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^ SET AWAL PAGE KETIKA START ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   {
     path: '404',
     component: P404Component,
@@ -22,6 +31,13 @@ export const routes: Routes = [
       title: 'Page 404'
     }
   },
+  // {
+  //   path: '**', //untuk segala jenis input di url
+  //   component: P404Component,
+  //   data: {
+  //     title: 'Page 404'
+  //   }
+  // },
   {
     path: '500',
     component: P500Component,
