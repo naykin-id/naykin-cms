@@ -42,12 +42,18 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+//utilities
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule,
     AppRoutingModule,
+    NgxSpinnerModule,
+    SweetAlert2Module.forRoot(),
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
     AppFooterModule,

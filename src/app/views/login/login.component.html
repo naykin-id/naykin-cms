@@ -1,3 +1,4 @@
+<ngx-spinner size = "large" color = "#29388a" bdColor = "rgba(51, 51, 51, 0.8)" type = "ball-atom"></ngx-spinner>
 <div class="app-body">
   <main class="main d-flex align-items-center">
     <div class="container">
@@ -24,6 +25,7 @@
                   <div class="row">
                     <div class="col-6">
                       <button type="button" (click)="login()" class="btn btn-primary px-4">Login</button>
+                      <!-- <button type="button" (click)="confirmFileDeletionSwal.show()" class="btn btn-primary px-4">TEST SWAL</button> -->
                     </div>
                     <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0">Forgot password?</button>
@@ -47,3 +49,9 @@
     </div>
   </main>
 </div>
+
+<!-- <swal #confirmFileDeletionSwal 
+  title="Are you sure want to delete it?" text="Delete record" type="warning"
+  [options]="{ showCancelButton: true,  confirmButtonText: 'Yes, deleted!',  confirmButtonColor: '#DD6B55' }"
+  (confirm)="confirmDeleteFile()">
+</swal> -->

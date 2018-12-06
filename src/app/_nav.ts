@@ -8,6 +8,29 @@ export const navItems = [
       text: 'NEW'
     }
   },
+  //////////// MENU
+  {
+    title: true,
+    name: 'Menu Master'
+  },
+  {
+    name: 'Menu 1',
+    url: '/404',
+    icon: 'icon-star'
+  },
+  {
+    name: 'Menu 2',
+    url: '/404',
+    icon: 'icon-star',
+    children: [
+      {
+        name: 'Menu 3',
+        url: '/404',
+        icon: 'icon-star'
+      }
+    ]
+  },
+  ////////////
   {
     title: true,
     name: 'Theme'
