@@ -46,6 +46,13 @@ export const routes: Routes = [
       title: 'Page 404'
     }
   },
+  // {
+  //   path: '**', //untuk segala jenis input di url
+  //   component: P404Component,
+  //   data: {
+  //     title: 'Page 404'
+  //   }
+  // },
   {
     path: '500',
     component: P500Component,
