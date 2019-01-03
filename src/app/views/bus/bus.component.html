@@ -1,2 +1,168 @@
 <div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> Master Bus
+            <div class="card-header-actions">
+                <button type="button" class="card-header-action btn btn-link btn-minimize" (click)="modalAdd.show()"
+                    data-toggle="tooltip" data-placement="bottom" title="Add Data"><i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Date registered</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Samppa Nori</td>
+                        <td>2012/01/01</td>
+                        <td>Member</td>
+                        <td>
+                            <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Detail"><i
+                                    class="fa fa-info"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Edit"><i
+                                    class="fa fa-pencil"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Delete"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Estavan Lykos</td>
+                        <td>2012/02/01</td>
+                        <td>Staff</td>
+                        <td>
+                            <span class="badge badge-danger">Banned</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Detail"><i
+                                    class="fa fa-info"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Edit"><i
+                                    class="fa fa-pencil"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Delete"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chetan Mohamed</td>
+                        <td>2012/02/01</td>
+                        <td>Admin</td>
+                        <td>
+                            <span class="badge badge-secondary">Inactive</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Detail"><i
+                                    class="fa fa-info"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Edit"><i
+                                    class="fa fa-pencil"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Delete"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Derick Maximinus</td>
+                        <td>2012/03/01</td>
+                        <td>Member</td>
+                        <td>
+                            <span class="badge badge-warning">Pending</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Detail"><i
+                                    class="fa fa-info"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Edit"><i
+                                    class="fa fa-pencil"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Delete"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Friderik Dávid</td>
+                        <td>2012/01/21</td>
+                        <td>Staff</td>
+                        <td>
+                            <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Detail"><i
+                                    class="fa fa-info"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Edit"><i
+                                    class="fa fa-pencil"></i></button>
+                            |
+                            <button class="btn btn-action view" data-toggle="tooltip" data-placement="bottom" title="Delete"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+<div bsModal id="modalAddData" #modalAdd="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add data bus</h4>
+                <button type="button" class="close" (click)="modalAdd.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="busName">Bus Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="busName" placeholder="Bus Name" [(ngModel)]="masterData.modalForm.busName" required/>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="busType">Bus Type <span class="required">*</span></label>
+                        <select id="busType" name="busType" class="form-control" placeholder="Bus Type" [(ngModel)]="masterData.modalForm.busType" required>
+                            <option ngForOf="let b of busType_List" [value]="b.id">{{b.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="busSeat">Bus Seat <span class="required">*</span></label>
+                        <input type="number" min="0" class="form-control" id="busSeat" placeholder="Bus Seat" [(ngModel)]="masterData.modalForm.busSeat" required/>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="busClass">Bus Class <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="busClass" placeholder="Bus Class" [(ngModel)]="masterData.modalForm.busClass" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modalAdd.hide()">Close</button>
+                <button type="button" class="btn btn-primary " (click)="saveData()">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

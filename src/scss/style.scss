@@ -6,3 +6,12 @@
 
 // If you want to add something do it here
 @import "custom";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+.table th, .table td{
+    vertical-align: baseline !important;
+}
+
+.required{
+    color: red;
+}

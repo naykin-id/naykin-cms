@@ -36,6 +36,7 @@
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
     "@coreui/icons": "0.3.0",
     "@toverux/ngx-sweetalert2": "^4.0.0",
+    "@types/jquery": "^3.3.28",
     "angular2-fontawesome": "^5.2.1",
     "angularfire2": "^5.1.1",
     "bootstrap": "^4.1.3",

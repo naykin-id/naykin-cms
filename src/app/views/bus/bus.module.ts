@@ -9,10 +9,14 @@ import { AgentComponent } from './agent.component';
 
 // Components Routing
 import { BusRoutingModule } from './bus-routing.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    BusRoutingModule
+    BusRoutingModule,
+    FormsModule,
+    ModalModule.forRoot()
   ],
   declarations: [
     BusComponent,

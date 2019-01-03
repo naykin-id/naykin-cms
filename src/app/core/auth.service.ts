@@ -72,6 +72,7 @@ export class AuthService {
   private oAuthLogin(provider) {
     return this.fireAuth.auth.signInWithPopup(provider)
       .then((credential) => {
+        localStorage.setItem("_userProfile", JSON.stringify(credential.additionalUserInfo.profile))
         this.updateUserData(credential.user);
       });
   }
@@ -86,7 +87,10 @@ export class AuthService {
 
   logout() {
     this.fireAuth.auth.signOut()
-    .then((res) => this.router.navigate(['']));
+    .then((res) => {
+      localStorage.clear()
+      this.router.navigate([''])
+    });
   }
 
   private updateUserData(user) {

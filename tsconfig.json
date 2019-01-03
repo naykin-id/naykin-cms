@@ -7,7 +7,15 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "target": "es5",
+    "baseUrl": ".",
+    "paths": {
+        "*": [
+            "bower_components/*",
+            "*"
+        ]
+    },
     "typeRoots": [
       "node_modules/@types"
     ],
